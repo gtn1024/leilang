@@ -19,6 +19,12 @@ clean:
 
 all: clean mod linux_amd64 linux_arm64 mac_amd64 mac_arm64 win_386 win_amd64
 
+build:
+	@echo "Compiling for current platform..."
+	@go build -o "$(target)/$(app_name).exe" -ldflags "$(GOLDFLAGS)"
+	@echo "Compile for current platform success!"
+	@echo
+
 linux_amd64:
 	@echo "Compiling for linux_amd64..."
 	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o "$(target)/linux_amd64/$(app_name)" -ldflags "$(GOLDFLAGS)"

@@ -12,7 +12,8 @@ var BuildVersion = ""
 
 func main() {
 	var version bool
-	flag.BoolVar(&version, "v", false, "version")
+	flag.BoolVar(&version, "v", false, "alias for --version")
+	flag.BoolVar(&version, "version", false, "get the version of lei lang")
 	flag.Parse()
 	if version {
 		fmt.Printf("Lei lang\n")
