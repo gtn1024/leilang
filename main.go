@@ -1,13 +1,26 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"lei/repl"
 	"os"
 	"os/user"
 )
 
+var BuildVersion = ""
+
 func main() {
+	var version bool
+	flag.BoolVar(&version, "v", false, "version")
+	flag.Parse()
+	if version {
+		fmt.Printf("Lei lang\n")
+		fmt.Printf("Copyright (C) 2023 Taoning Ge\n")
+		fmt.Printf("Build version: %s\n", BuildVersion)
+		return
+	}
+
 	user, err := user.Current()
 	if err != nil {
 		panic(err)
