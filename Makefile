@@ -1,7 +1,7 @@
 git_rev	 	  = $(shell git rev-parse --short HEAD)
 git_branch  = $(shell git rev-parse --abbrev-ref HEAD)
 app_name	  = "lei"
-app_version = "0.0.2"
+app_version = "0.0.3"
 
 target = "./target"
 
